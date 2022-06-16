@@ -19,6 +19,9 @@ export const userSlice = createSlice({
         if (user.id === action.payload.id) {
           user.username = action.payload.username;
         }
+        // Existing code gives a warning with map function
+        //Array.prototype.map() expects a return value from arrow function.
+        return user.username //need to return value
       });
     },
   },
